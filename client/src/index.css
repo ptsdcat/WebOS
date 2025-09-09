@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 216 28% 7%;
+  --foreground: 213 31% 91%;
+  --muted: 215 27.9% 16.9%;
+  --muted-foreground: 217.9 10.6% 64.9%;
+  --popover: 215 27.9% 16.9%;
+  --popover-foreground: 213 31% 91%;
+  --card: 215 27.9% 16.9%;
+  --card-foreground: 213 31% 91%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --primary: 197 71% 73%;
+  --primary-foreground: 215 27.9% 16.9%;
+  --secondary: 215 27.9% 16.9%;
+  --secondary-foreground: 213 31% 91%;
+  --accent: 215 27.9% 16.9%;
+  --accent-foreground: 213 31% 91%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 213 31% 91%;
+  --ring: 197 71% 73%;
+  --radius: 0.375rem;
+  --arch-blue: 197 71% 73%;
+  --arch-dark: 216 28% 7%;
+  --arch-surface: 217.2 32.6% 17.5%;
+  --arch-lighter: 215 27.9% 16.9%;
+  --arch-text: 213 31% 91%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom OS Styles */
+.desktop-icon {
+  transition: all 0.2s ease;
+}
+
+.desktop-icon:hover {
+  transform: scale(1.05);
+}
+
+/* Corrupted desktop state */
+.corrupted-desktop {
+  background: linear-gradient(45deg, #ff0000 0%, #000000 50%, #ff0000 100%);
+  background-size: 20px 20px;
+  animation: corrupted-flicker 2s infinite;
+}
+
+@keyframes corrupted-flicker {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.8; }
+}
+
+.corrupted-wallpaper {
+  background: repeating-linear-gradient(
+    45deg,
+    #220000,
+    #220000 10px,
+    #440000 10px,
+    #440000 20px
+  );
+  position: relative;
+}
+
+.corrupted-wallpaper::before {
+  content: "SYSTEM ERROR - MISSING DEPENDENCIES";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff4444;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  animation: error-blink 1s infinite;
+}
+
+@keyframes error-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+.window-shadow {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.glass-effect {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.taskbar-glass {
+  backdrop-filter: blur(30px);
+  background: rgba(248, 248, 248, 0.8);
+}
+
+.dragging {
+  user-select: none;
+  z-index: 1000;
+}
+
+.window-content {
+  height: calc(100% - 40px);
+}
+
+.select-none {
+  user-select: none;
+}
+
+
+
+/* Custom animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.2s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Login Animation Styles */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
