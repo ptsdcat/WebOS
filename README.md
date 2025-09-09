@@ -200,7 +200,7 @@ Comprehensive application suite mimicking a real desktop environment:
 
 The architecture emphasizes modularity, type safety, and user experience while maintaining the flexibility to add new applications and features. The system is designed to work entirely in the browser while providing hooks for server-side data persistence and external service integration.
 
-## 🛠️ Development
+## Development
 
 ### Project Structure
 ```
@@ -385,3 +385,4 @@ For support, feature requests, or bug reports:
 - Check the documentation for common questions
 
 - I tried my best on the websites and stuff
+
