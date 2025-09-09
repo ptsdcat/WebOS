@@ -59,7 +59,7 @@ A comprehensive web-based desktop operating system that emulates a Linux desktop
 
 1. **Clone and Install**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/ptsdcat/WebOS.git
    cd webos
    npm install
    ```
@@ -383,4 +383,5 @@ For support, feature requests, or bug reports:
 - Open an issue on GitHub
 - Join our community discussions
 - Check the documentation for common questions
+
 - I tried my best on the websites and stuff
